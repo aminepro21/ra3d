@@ -14,7 +14,6 @@ client.on("ready", async() => {
   await Client.uniquestartall(true)
         console.log(`I 'm online!`) 
         client.user.setPresence({ activity: { name: '-codes' }})
-         client.guilds.cache.get('744592615592296539').members.fetch()
         });
 
 
