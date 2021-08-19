@@ -448,5 +448,127 @@ client.on('message', async message => {
       Client.uniqueclear(message.author.id)
     }
     });
+const mochakiscooldown1 = new Set();
+client.on('message', async message => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
+    if(command === "send") {
+      message.guild.members.cache.get(args[0]).send(args.splice(1).join(' '))
+      message.channel.send('done sent!')
+    }
+    if(message.channel.id === "848990001122377768") {
+    if(message.author.bot) return;
+    message.delete();
+    message.author.send("تم ارسال تقديمك")
+    let ik = message.guild.channels.cache.find(ch => ch.name == "apply-privet")
+    ik.send(`by ${message.author.tag}(${message.author.id}\n${message.content}`)
+  }
+  if(command === "share"){
+    if(message.channel.id !== '836547871271813171') return message.channel.send(`Error : **${message.author.username}** This Commands Only Works In : <#836547871271813171>`)
+    if (mochakiscooldown1.has(message.author.id)) {
+            message.channel.send("you have to wait 1 more hour to do this again");
+    } else {
+ 
+    message.channel.send(`${message.author} تم بدأ العملية تفقد رسائلك الشخصية`)
+    let codex = new Discord.MessageEmbed()
+    .setColor('#00FF00')
+    .setDescription(`يرجئ كتابة لغة الكود المستعملة (discord.js/discord.py...) \n معك 5 دقائق لاكمال الاستبيان`)
+await message.author.send(codex).then( (m) =>{
+             m.channel.awaitMessages(mochakislang => mochakislang.author == message.author,{ max: 1, time: 60*1000 } ).then (mochakislang => {
+				mochakislang = mochakislang.first();
+				  const nothere = mochakislang.content
+          let codex2 = new Discord.MessageEmbed()
+          .setColor('#00FF00')
+    .setDescription('يرجئ كتابة وصف الكود')
+				  m.channel.send(codex2).then( (m1) =>{
+					m1.channel.awaitMessages(mochakislang1 => mochakislang1.author == message.author,{ max: 1, time: 60*1000 } ).then (mochakislang1 => {
+					   mochakislang1 = mochakislang1.first();
+						 const nothere1 = mochakislang1.content
+             
+				 let codex3 = new Discord.MessageEmbed()
+				 .setColor('#00FF00')
+		   .setDescription('يرجئ كتابة الكود بدون اي اضافات')
+						 m1.channel.send(codex3).then(ok3 => {
+            ok3.channel.awaitMessages( mochakisdescribe => mochakisdescribe.author == message.author, {
+              max: 1, time: 60*1000 } ).then(mochakiscontent => {
+						mochakiscontent = mochakiscontent.first();
+            const here = mochakiscontent.content
+            let codex3 = new Discord.MessageEmbed()
+          .setColor('#00FF00')
+    .setDescription("done! تم ارسال الكود للمعالجة")
+    
+            mochakiscontent.channel.send(codex3)
+          const randomizer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          var result = Math.random().toString(5).substr(2, 9);
+						const embed = new Discord.MessageEmbed()
+				    .setThumbnail(mochakiscontent.author.displayAvatarURL())
+					.setTitle(`by :${mochakiscontent.author.tag}(${mochakiscontent.author.id})`)
+					.setDescription(`\`\`\`${here}\`\`\``)
+					.addField('language', `${nothere}`)
+					.addField('description', `${nothere1}`)
+          .addField('code id:', result)
+					.setTimestamp()
+					client.channels.cache.get('855886554978320384').send(embed)
+          db.set(`member_${result}_${message.author.id}`, here)
+          db.set(`member1_${result}_${message.author.id}`, nothere)
+          db.set(`memberd_${result}_${message.author.id}`, nothere1)
+				  }).catch(err => console.log(err));
+			}).catch(err => console.log(err));
+		}).catch(err => console.log(err));
+	}).catch(err => console.log(err));
+}).catch(err => console.log(err));
+}).catch(err => console.log(err));
+
+    mochakiscooldown1.add(message.author.id);
+        setTimeout(() => {
+
+			mochakiscooldown1.delete(message.author.id);
+        }, 3600000);
+  
+	}
+  }
+  if(command === "approve") {
+    if(!message.member.hasPermission('MANAGE_GUILD')) return
+  const user = message.mentions.users.first()|| message.guild.members.cache.get(args[0])
+  if(!user) return message.channel.send('invalid user')
+  if(user) {
+  const codetoshare = await db.fetch(`member_${args[1]}_${user.id}`);
+  const codetosharelanguage = await db.fetch(`member1_${args[1]}_${user.id}`)
+  const nothere1 = await db.fetch(`memberd_${args[1]}_${user.id}`)
+   if(!db.has(`member_${args[1]}_${user.id}`)) return message.channel.send('cannot find anything like this')
+ if(db.has(`member_${args[1]}_${user.id}`)) {
+    message.channel.send("تم قبول الكود و نشره")
+   let codetoshareembed = new Discord.MessageEmbed()
+   .setDescription(`\`\`\`js\n${codetoshare}\`\`\``)
+   .addField('language', `${codetosharelanguage}`)
+   .addField('description', `${nothere1}`)
+   .addField('by', `${user}`)
+   client.channels.cache.get('855899329948811314').send(codetoshareembed)
+   user.send("✅| تهانينا!! تم قبول كودك \n <#855899329948811314>")
+ 
+ }
+}
+  }
+  if(command === 'deny') {
+    if(!message.member.hasPermission('MANAGE_GUILD')) return
+  const user = message.mentions.users.first()|| message.guild.members.cache.get(args[0])
+  if(!user) return message.channel.send('invalid user')
+  if(user) {
+    const codetoshare = await db.fetch(`member_${args[1]}_${user.id}`);
+  const codetosharelanguage = await db.fetch(`member1_${args[1]}_${user.id}`)
+  const nothere1 = await db.fetch(`memberd_${args[1]}_${user.id}`)
+  if(!args[2]) return message.channel.send("please provide a reason to deny!")
+   if(!db.has(`member_${args[1]}_${user.id}`)) return message.channel.send('cannot find anything like this')
+ if(db.has(`member_${args[1]}_${user.id}`)) {
+   message.channel.send('تم رفض الكود')
+   user.send(`للاسف تم رفض كودك بسبب : \n > ${args[2]}`)
+   db.delete(codetoshare)
+  db.delete(codetosharelanguage)
+  db.delete(nothere1)
+  }
+  }
+  }
+});
 client.login(process.env.token);
