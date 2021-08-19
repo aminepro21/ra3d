@@ -455,7 +455,7 @@ client.on('message', async message => {
     const command = args.shift().toLowerCase();
     if(command === "send") {
 	     if(!message.member.hasPermission('MANAGE_GUILD')) return
-      message.guild.members.cache.get(args[0]).send(args.splice(1).join(' ')).catch(err => {return message.channel.send('member not found provide id')}
+      message.guild.members.cache.get(args[0]).send(args.splice(1).join(' ')).catch(err => {return message.channel.send('member not found provide id')})
       message.channel.send('done sent!')
     }
     if(message.channel.id === "848990001122377768") {
