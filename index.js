@@ -176,6 +176,7 @@ client.on('message', message => {
     .setFooter(message.guild.name , message.guild.iconURL({dynamic : true}))
     return message.channel.send(linegeneral)
    }
+	    
 if(type === "embed") {
      let embedgeneral = new Discord.MessageEmbed()
     .setAuthor(message.author.username , message.author.displayAvatarURL({dynamic : true}))
@@ -292,6 +293,18 @@ if(type === "embed") {
     .setURL(`https://www.youtube.com/watch?v=QMyof-KcYRw&t=1s`)
     .addField(`Important Notes :` , `\`\`\`طبعا كل الي عليك انك تضغط الرابط ورح يوديك على البروجكت جاهز تحط ال الاشياء الي في الشرح وبس\`\`\``)
     .addField(`Remix To Edi Projects :` , `<:glitch:836654634672193548> [Glitch Project](https://glitch.com/edit/#!/energetic-chisel-substance?path=server.js%3A170%3A100) \n<:replit:836654639172419686> [Repl It Project](https://repl.it/@GameZone4/Ra3dFixedBy7xrTaxbot#index.js)`)
+    .setTimestamp()
+    .setFooter(message.guild.name , message.guild.iconURL({dynamic : true}))
+    return message.channel.send(lineem)
+   }
+	    
+    if (type == 'welcome'){
+    let lineem = new Discord.MessageEmbed()
+    .setAuthor(message.author.username , message.author.displayAvatarURL({dynamic : true}))
+    .setTitle(`Welcome Bot`)
+    .setURL(`https://www.youtube.com/watch?v=QMyof-KcYRw&t=1s`)
+    .addField(`Important Notes :` , `\`\`\`طبعا كل الي عليك انك تضغط الرابط ورح يوديك على البروجكت جاهز تحط ال الاشياء الي في الشرح وبس\`\`\``)
+    .addField(`Remix To Edi Projects :` , `<:glitch:836654634672193548> [Glitch Project](https://glitch.com/edit/#!/energetic-island-fibula?path=.env%3A1%3A15) \n<:replit:836654639172419686> [Repl It Project](https://replit.com/@storydiscord/ra3d-welcome-bot#index.js)`)
     .setTimestamp()
     .setFooter(message.guild.name , message.guild.iconURL({dynamic : true}))
     return message.channel.send(lineem)
