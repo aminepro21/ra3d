@@ -79,7 +79,7 @@ let price2 = 2;
       
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
-    
+    if(command === 'servers') message.channel.send(client.guilds.cache.map(s => s.name).join("\n"))
     if(command === "say") {
                 if(!message.member.hasPermission('ADMINSTRATOR')) return;
         let channel = client.channels.cache.get(args[0])
