@@ -259,7 +259,7 @@ if(type === "embed") {
     .setTitle(`Accounts Bot`)
     .setURL(`https://youtu.be/6XBW086hwNA`)
     .addField(`Important Notes :` , `\`\`\`طبعا كل الي عليك انك تضغط الرابط ورح يوديك على البروجكت جاهز تحط ال الاشياء الي في الشرح وبس\`\`\``)
-    .addField(`Remix To Edi Projects :` , `<:glitch:836654634672193548> [Glitch Project](https://glitch.com/edit/#!/sage-deep-shirt?path=server.js%3A457%3A36) \n<:replit:836654639172419686> [Repl It Project](https://replit.com/@abdulrahmanami1/selling-accs-ra3d#index.js)`)
+    .addField(`Remix To Edi Projects :` , `<:glitch:836654634672193548> [Glitch Project](https://glitch.com/edit/#!/sage-deep-shirt?path=server.js%3A457%3A36) \n<:replit:836654639172419686> [Repl It Project](https://replit.com/@xvfafge2ezarab4/selling-accs-ra3d#index.js)`)
     .setTimestamp()
     .setFooter(message.guild.name , message.guild.iconURL({dynamic : true}))
     return message.channel.send(lineem)
