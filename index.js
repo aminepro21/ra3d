@@ -246,7 +246,7 @@ if(type === "embed") {
     let pr = new Discord.MessageEmbed()
     .setAuthor(message.author.username , message.author.displayAvatarURL({dynamic : true}))
     .setTitle(`protection Bot`)
-    .setURL(`https://www.youtube.com/watch?v=AS34u5iIgoQ`)
+    .setURL(`https://youtu.be/p6X6ggRtuYw`)
     .addField(`Important Notes :` , `\`\`\`طبعا كل الي عليك انك تضغط الرابط ورح يوديك على البروجكت جاهز تحط ال الاشياء الي في الشرح وبس\`\`\``)
     .addField(`Remix To Edi Projects :` , `<:glitch:836654634672193548> [Glitch Project](https://glitch.com/edit/#!/ripple-immediate-pyrite?path=index.js%3A12%3A2) \n<:replit:836654639172419686> [Repl It Project](https://replit.com/@xvfafge2ezarab4/protection-by-amine#index.js)`)
     .setTimestamp()
