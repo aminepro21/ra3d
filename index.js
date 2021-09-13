@@ -253,6 +253,17 @@ if(type === "embed") {
     .setFooter(message.guild.name , message.guild.iconURL({dynamic : true}))
     return message.channel.send(pr)
    }
+	    if (type == 'warnnings'){
+    let pr = new Discord.MessageEmbed()
+    .setAuthor(message.author.username , message.author.displayAvatarURL({dynamic : true}))
+    .setTitle(`warnnings Bot`)
+    .setURL(`https://youtu.be/p6X6ggRtuYw`)
+    .addField(`Important Notes :` , `\`\`\`طبعا كل الي عليك انك تضغط الرابط ورح يوديك على البروجكت جاهز تحط ال الاشياء الي في الشرح وبس\`\`\``)
+    .addField(`Remix To Edi Projects :` , `<:glitch:836654634672193548> [Glitch Project](https://glitch.com/edit/#!/pointy-field-stranger?path=index.js%3A103%3A31) \n<:replit:836654639172419686> [Repl It Project](https://replit.com/@xvfafge2ezarab4/warnnings-by-amine)`)
+    .setTimestamp()
+    .setFooter(message.guild.name , message.guild.iconURL({dynamic : true}))
+    return message.channel.send(pr)
+   }
    if (type == 'broadcast'){
     let lineem = new Discord.MessageEmbed()
     .setAuthor(message.author.username , message.author.displayAvatarURL({dynamic : true}))
