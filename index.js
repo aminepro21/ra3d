@@ -214,7 +214,7 @@ if(type === "embed") {
     let type = args[1]
    let nocom = new Discord.MessageEmbed()
    .setAuthor(message.author.username , message.author.displayAvatarURL({dynamic : true}))
-    .addField(`<:youtube:765041228319948800> YouTube Codes :` , `\`\`\`${prefix}codes line \n${prefix}codes protection\n${prefix}codes broadcast\n${prefix}codes broadcastv2\n${prefix}codes broadcastv3\n${prefix}codes orders\n${prefix}codes orderv2\n${prefix}codes orderv3\n${prefix}codes suggestions\n${prefix}codes tax \n${prefix}codes accounts\n${prefix}codes scambot\n${prefix}codes reactionrole\n${prefix}codes roles\n${prefix}codes ads\n${prefix}codes picture\n${prefix}codes uptime\`\`\``)
+    .addField(`<:youtube:765041228319948800> YouTube Codes :` , `\`\`\`${prefix}codes line \n${prefix}codes protection\n${prefix}codes warnnings\n${prefix}codes broadcast\n${prefix}codes broadcastv2\n${prefix}codes broadcastv3\n${prefix}codes orders\n${prefix}codes orderv2\n${prefix}codes orderv3\n${prefix}codes suggestions\n${prefix}codes tax \n${prefix}codes accounts\n${prefix}codes scambot\n${prefix}codes reactionrole\n${prefix}codes roles\n${prefix}codes ads\n${prefix}codes picture\n${prefix}codes uptime\`\`\``)
    .addField(`General Codes :`,`\`\`\`${prefix}general react : كود يسوي لكل رساله ترسها رياكشن \n${prefix}general line : كود يسوي لك خط بامر \n${prefix}general embed : كود يحول اي كلام ينرسل في روم معين الى امبيد\n${prefix}general thanks : كود يسوي لاي كلام رياكشن لروم الشكر او التقيم \n${prefix}general voice : كود يخلي البوت 24 ساعه في روم صوتي\`\`\``)
     .addField(`Important Notes :` , `كل الي عليك هنا انك تختار الكود الي انت عايزو ، لو واجهتك مشكله روم السبورت موجود وخاصنا مش سبورت برضو فا لو وجهتك مشكله توجه الى : <#836653083635089419>`)
    .setTimestamp()
